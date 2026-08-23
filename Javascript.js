@@ -1,447 +1,1252 @@
-"use strict";
+<!DOCTYPE html>
+<html lang="ht" id="htmlRoot" translate="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#000000">
+<meta name="google" content="notranslate">
 
-const translations = {
-  ht: {
-    navHome: "Akèy",
-    navVision: "Vizyon",
-    navCommitment: "Angajman",
-    navPillars: "Prensip",
-    navMovement: "Mouvman",
-    navContact: "Kontak",
+<title>DEVAN DEVAN NÈT | BSS1815 PRO-MAX DMP</title>
 
-    heroEyebrow: "YON MOUVMAN. YON VIZYON. YON AVNI.",
-    heroLead:
-      "Nou pa tann demen pou nou kòmanse. Nou bati jodi a avèk vizyon, kouraj, teknoloji ak entèlijans.",
-    readCommitment: "Li angajman an",
-    joinMovement: "Antre nan mouvman an",
-    heroSignature:
-      "Bati pou jodi a. Pare pou demen. Toujou devan.",
-    orbitMessage:
-      "NOUVÈL MOND LAN • VIZYON • INOVASYON • PWOGRÈ",
+<meta
+  name="description"
+  content="DEVAN DEVAN NÈT — Bati pou jodi a. Pare pou demen."
+>
 
-    visionEyebrow: "VIZYON NOU",
-    visionTitle: "Nou chwazi avanse",
-    visionStatement:
-      "DEVAN DEVAN NÈT se yon mouvman ki ankouraje chak moun leve tèt li, devlope kapasite li epi sèvi ak zouti modèn yo pou konstwi yon avni ki pi solid.",
-    actionTitle: "Aksyon",
-    actionText:
-      "Nou transfòme lide an aksyon konkrè ki pote rezilta.",
-    futureTitle: "Lavni",
-    futureText:
-      "Nou prepare jenerasyon jodi a pou opòtinite demen yo.",
+<meta name="author" content="Max Louis, alias Le Baron">
 
-    commitmentEyebrow: "DEKLARASYON ANGAJMAN",
-    commitmentTitle:
-      "Nou pap viv ap gade mond lan pase devan nou",
-    commitmentLead:
-      "Nou refize rete prizonye laperèz, reta, konfizyon ak sistèm ki pa adapte ak epòk nou an.",
-    commitmentLine1:
-      "Nou kwè nan edikasyon ki louvri lespri.",
-    commitmentLine2:
-      "Nou kwè nan teknoloji ki ranfòse kapasite moun.",
-    commitmentLine3:
-      "Nou kwè nan disiplin, kolaborasyon ak responsablite.",
-    commitmentLine4:
-      "Nou kwè pwogrè kòmanse lè nou deside aji.",
-    commitmentQuote:
-      "“Nou pa la pou nou swiv tras lavni. Nou la pou nou trase chemen li.”",
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+>
 
-    pillarsEyebrow: "PRENSIP MOUVMAN AN",
-    pillarsTitle: "Kat fòs ki pouse nou devan",
-    pillarVisionTitle: "Vizyon",
-    pillarVisionText:
-      "Wè pi lwen pase pwoblèm jodi a pou prepare solisyon demen yo.",
-    pillarEducationTitle: "Edikasyon",
-    pillarEducationText:
-      "Aprann, pataje konesans epi devlope tout kapasite nou.",
-    pillarInnovationTitle: "Inovasyon",
-    pillarInnovationText:
-      "Sèvi ak teknoloji ak entèlijans atifisyèl avèk sajès.",
-    pillarUnityTitle: "Inite",
-    pillarUnityText:
-      "Rasanble eksperyans ansyen yo ak enèji nouvo jenerasyon an.",
+<link rel="stylesheet" href="style.css">
 
-    aiCommand: "SANT KÒMAND DIJITAL",
-    aiTitle:
-      "Teknoloji pa ranplase vizyon. Li bay vizyon plis pouvwa.",
-    aiText:
-      "Nou itilize entèlijans atifisyèl pou aprann pi vit, òganize pi byen, kreye plis opòtinite epi sèvi kominote nou an avèk plis efikasite.",
-    aiAssistant: "Asistan AI",
-    aiWriter: "Ekriven AI",
-    voiceStudio: "Estidyo vwa",
-    digitalNetwork: "Rezo dijital",
+<style>
+/* 4 LOGO PWOJÈ YO */
 
-    movementEyebrow: "MOMAN AN RIVE",
-    movementTitle:
-      "Pa rete dèyè. Pran plas ou nan mouvman an.",
-    movementText:
-      "DEVAN DEVAN NÈT se pou moun ki pare pou aprann, konstwi, kolabore epi avanse. Chak moun gen yon kapasite. Chak kapasite gen yon plas.",
-    contactUs: "Kontakte nou",
-    backPlatform:
-      "Retounen nan BSS1815 PRO-MAX DMP",
+.projects-showcase{
+  width:min(100%,1200px);
+  margin:auto;
+  padding:95px 22px;
+}
 
-    contactEyebrow: "KONEKTE AK NOU",
-    contactTitle:
-      "Kontak ofisyèl ak rezo sosyal yo",
-    phoneTitle: "Nimewo telefòn",
-    digitalTitle: "Kontak dijital",
+.projects-heading{
+  max-width:850px;
+  margin:0 auto 45px;
+  text-align:center;
+}
 
-    footerSlogan:
-      "Bati pou jodi a. Pare pou demen.",
-    founderCredit:
-      "Yon vizyon Max Louis, alias Le Baron",
-    backTop: "Retounen anlè ↑",
-    rights: "Tout dwa rezève."
-  },
+.projects-heading h2{
+  color:#ffb066;
+  font-size:clamp(2rem,5vw,4rem);
+  line-height:1.08;
+}
 
-  fr: {
-    navHome: "Accueil",
-    navVision: "Vision",
-    navCommitment: "Engagement",
-    navPillars: "Principes",
-    navMovement: "Mouvement",
-    navContact: "Contacts",
+.projects-heading p{
+  margin-top:15px;
+  color:#ff8c42;
+  font-weight:800;
+}
 
-    heroEyebrow:
-      "UN MOUVEMENT. UNE VISION. UN AVENIR.",
-    heroLead:
-      "Nous n’attendons pas demain pour commencer. Nous construisons aujourd’hui avec vision, courage, technologie et intelligence.",
-    readCommitment: "Lire l’engagement",
-    joinMovement: "Rejoindre le mouvement",
-    heroSignature:
-      "Construire pour aujourd’hui. Prêts pour demain. Toujours devant.",
-    orbitMessage:
-      "NOUVELLES DU MONDE • VISION • INNOVATION • PROGRÈS",
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:20px;
+}
 
-    visionEyebrow: "NOTRE VISION",
-    visionTitle: "Nous choisissons d’avancer",
-    visionStatement:
-      "DEVAN DEVAN NÈT est un mouvement qui encourage chacun à se relever, à développer ses capacités et à utiliser les outils modernes pour bâtir un avenir plus solide.",
-    actionTitle: "Action",
-    actionText:
-      "Nous transformons les idées en actions concrètes qui produisent des résultats.",
-    futureTitle: "Avenir",
-    futureText:
-      "Nous préparons la génération actuelle aux possibilités de demain.",
+.project-card{
+  position:relative;
+  min-width:0;
+  overflow:hidden;
+  border:1px solid rgba(255,140,66,.55);
+  border-radius:24px;
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(255,90,0,.25),
+      transparent 52%
+    ),
+    linear-gradient(145deg,#170701,#000);
+  box-shadow:
+    0 12px 35px rgba(0,0,0,.65),
+    inset 0 0 25px rgba(255,90,0,.08);
+  transition:
+    transform .3s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
 
-    commitmentEyebrow:
-      "DÉCLARATION D’ENGAGEMENT",
-    commitmentTitle:
-      "Nous ne regarderons pas le monde avancer sans nous",
-    commitmentLead:
-      "Nous refusons de rester prisonniers de la peur, des retards, de la confusion et de systèmes inadaptés à notre époque.",
-    commitmentLine1:
-      "Nous croyons en une éducation qui ouvre les esprits.",
-    commitmentLine2:
-      "Nous croyons en une technologie qui renforce les capacités humaines.",
-    commitmentLine3:
-      "Nous croyons en la discipline, la collaboration et la responsabilité.",
-    commitmentLine4:
-      "Nous croyons que le progrès commence lorsque nous décidons d’agir.",
-    commitmentQuote:
-      "« Nous ne sommes pas ici pour suivre les traces de l’avenir. Nous sommes ici pour en tracer le chemin. »",
-
-    pillarsEyebrow:
-      "PRINCIPES DU MOUVEMENT",
-    pillarsTitle:
-      "Quatre forces qui nous poussent vers l’avant",
-    pillarVisionTitle: "Vision",
-    pillarVisionText:
-      "Voir au-delà des problèmes actuels afin de préparer les solutions de demain.",
-    pillarEducationTitle: "Éducation",
-    pillarEducationText:
-      "Apprendre, partager les connaissances et développer toutes nos capacités.",
-    pillarInnovationTitle: "Innovation",
-    pillarInnovationText:
-      "Utiliser la technologie et l’intelligence artificielle avec discernement.",
-    pillarUnityTitle: "Unité",
-    pillarUnityText:
-      "Réunir l’expérience des anciens et l’énergie de la nouvelle génération.",
-
-    aiCommand:
-      "CENTRE DE COMMANDE NUMÉRIQUE",
-    aiTitle:
-      "La technologie ne remplace pas la vision. Elle lui donne davantage de puissance.",
-    aiText:
-      "Nous utilisons l’intelligence artificielle pour apprendre plus rapidement, mieux nous organiser, créer davantage de possibilités et servir notre communauté plus efficacement.",
-    aiAssistant: "Assistant IA",
-    aiWriter: "Rédacteur IA",
-    voiceStudio: "Studio vocal",
-    digitalNetwork: "Réseau numérique",
-
-    movementEyebrow: "LE MOMENT EST VENU",
-    movementTitle:
-      "Ne restez pas en arrière. Prenez votre place dans le mouvement.",
-    movementText:
-      "DEVAN DEVAN NÈT s’adresse aux personnes prêtes à apprendre, construire, collaborer et avancer. Chaque personne possède une capacité. Chaque capacité a sa place.",
-    contactUs: "Nous contacter",
-    backPlatform:
-      "Retour à BSS1815 PRO-MAX DMP",
-
-    contactEyebrow: "RESTEZ CONNECTÉS",
-    contactTitle:
-      "Contacts officiels et réseaux sociaux",
-    phoneTitle: "Numéros de téléphone",
-    digitalTitle: "Contacts numériques",
-
-    footerSlogan:
-      "Construire pour aujourd’hui. Prêts pour demain.",
-    founderCredit:
-      "Une vision de Max Louis, alias Le Baron",
-    backTop: "Retour en haut ↑",
-    rights: "Tous droits réservés."
-  },
-
-  en: {
-    navHome: "Home",
-    navVision: "Vision",
-    navCommitment: "Commitment",
-    navPillars: "Principles",
-    navMovement: "Movement",
-    navContact: "Contact",
-
-    heroEyebrow:
-      "ONE MOVEMENT. ONE VISION. ONE FUTURE.",
-    heroLead:
-      "We do not wait for tomorrow to begin. We build today with vision, courage, technology and intelligence.",
-    readCommitment: "Read the commitment",
-    joinMovement: "Join the movement",
-    heroSignature:
-      "Building for today. Ready for tomorrow. Always forward.",
-    orbitMessage:
-      "WORLD NEWS • VISION • INNOVATION • PROGRESS",
-
-    visionEyebrow: "OUR VISION",
-    visionTitle: "We choose to move forward",
-    visionStatement:
-      "DEVAN DEVAN NÈT is a movement that encourages everyone to rise, develop their abilities and use modern tools to build a stronger future.",
-    actionTitle: "Action",
-    actionText:
-      "We turn ideas into concrete actions that produce results.",
-    futureTitle: "Future",
-    futureText:
-      "We prepare today’s generation for tomorrow’s opportunities.",
-
-    commitmentEyebrow:
-      "DECLARATION OF COMMITMENT",
-    commitmentTitle:
-      "We will not watch the world move forward without us",
-    commitmentLead:
-      "We refuse to remain prisoners of fear, delays, confusion and systems that no longer fit our time.",
-    commitmentLine1:
-      "We believe in education that opens minds.",
-    commitmentLine2:
-      "We believe in technology that strengthens human abilities.",
-    commitmentLine3:
-      "We believe in discipline, collaboration and responsibility.",
-    commitmentLine4:
-      "We believe progress begins when we decide to act.",
-    commitmentQuote:
-      "“We are not here to follow the footsteps of the future. We are here to chart its course.”",
-
-    pillarsEyebrow:
-      "MOVEMENT PRINCIPLES",
-    pillarsTitle:
-      "Four forces that move us forward",
-    pillarVisionTitle: "Vision",
-    pillarVisionText:
-      "See beyond today’s problems to prepare tomorrow’s solutions.",
-    pillarEducationTitle: "Education",
-    pillarEducationText:
-      "Learn, share knowledge and develop our full potential.",
-    pillarInnovationTitle: "Innovation",
-    pillarInnovationText:
-      "Use technology and artificial intelligence wisely.",
-    pillarUnityTitle: "Unity",
-    pillarUnityText:
-      "Bring together the experience of elders and the energy of the new generation.",
-
-    aiCommand: "DIGITAL COMMAND CENTER",
-    aiTitle:
-      "Technology does not replace vision. It gives vision more power.",
-    aiText:
-      "We use artificial intelligence to learn faster, organize better, create more opportunities and serve our community more effectively.",
-    aiAssistant: "AI Assistant",
-    aiWriter: "AI Writer",
-    voiceStudio: "Voice Studio",
-    digitalNetwork: "Digital Network",
-
-    movementEyebrow: "THE TIME IS NOW",
-    movementTitle:
-      "Do not stay behind. Take your place in the movement.",
-    movementText:
-      "DEVAN DEVAN NÈT is for people ready to learn, build, collaborate and move forward. Everyone has an ability. Every ability has a place.",
-    contactUs: "Contact us",
-    backPlatform:
-      "Return to BSS1815 PRO-MAX DMP",
-
-    contactEyebrow: "CONNECT WITH US",
-    contactTitle:
-      "Official contacts and social networks",
-    phoneTitle: "Phone numbers",
-    digitalTitle: "Digital contacts",
-
-    footerSlogan:
-      "Building for today. Ready for tomorrow.",
-    founderCredit:
-      "A vision by Max Louis, alias Le Baron",
-    backTop: "Back to top ↑",
-    rights: "All rights reserved."
-  }
-};
-
-document.addEventListener("DOMContentLoaded", function () {
-  const htmlRoot = document.documentElement;
-  const languageButtons =
-    document.querySelectorAll(".lang-btn");
-  const menuToggle =
-    document.getElementById("menuToggle");
-  const mainNav =
-    document.getElementById("mainNav");
-  const currentYear =
-    document.getElementById("currentYear");
-
-  function saveLanguage(language) {
-    try {
-      localStorage.setItem(
-        "ddn-language",
-        language
-      );
-    } catch (error) {
-      /* Kontinye travay si localStorage bloke. */
-    }
-  }
-
-  function getSavedLanguage() {
-    try {
-      return (
-        localStorage.getItem("ddn-language") ||
-        "ht"
-      );
-    } catch (error) {
-      return "ht";
-    }
-  }
-
-  function setLanguage(language) {
-    const selectedLanguage =
-      Object.prototype.hasOwnProperty.call(
-        translations,
-        language
-      )
-        ? language
-        : "ht";
-
-    const dictionary =
-      translations[selectedLanguage];
-
-    htmlRoot.setAttribute(
-      "lang",
-      selectedLanguage
+.project-card::before{
+  content:"";
+  position:absolute;
+  inset:-45%;
+  z-index:0;
+  border-radius:50%;
+  background:
+    conic-gradient(
+      from 0deg,
+      transparent,
+      rgba(255,140,66,.12),
+      rgba(255,90,0,.75),
+      rgba(255,140,66,.12),
+      transparent 38%
     );
+  animation:projectOrbit 8s linear infinite;
+}
 
-    document
-      .querySelectorAll("[data-i18n]")
-      .forEach(function (element) {
-        const translationKey =
-          element.getAttribute("data-i18n");
+.project-card:nth-child(2)::before{
+  animation-duration:10s;
+  animation-direction:reverse;
+}
 
-        if (
-          Object.prototype.hasOwnProperty.call(
-            dictionary,
-            translationKey
-          )
-        ) {
-          element.textContent =
-            dictionary[translationKey];
-        }
-      });
+.project-card:nth-child(3)::before{
+  animation-duration:12s;
+}
 
-    languageButtons.forEach(function (button) {
-      const isActive =
-        button.getAttribute("data-lang") ===
-        selectedLanguage;
+.project-card:nth-child(4)::before{
+  animation-duration:9s;
+  animation-direction:reverse;
+}
 
-      button.classList.toggle(
-        "active",
-        isActive
-      );
-
-      button.setAttribute(
-        "aria-pressed",
-        isActive ? "true" : "false"
-      );
-    });
-
-    saveLanguage(selectedLanguage);
-  }
-
-  languageButtons.forEach(function (button) {
-    button.addEventListener(
-      "click",
-      function (event) {
-        event.preventDefault();
-
-        const selectedLanguage =
-          button.getAttribute("data-lang");
-
-        setLanguage(selectedLanguage);
-      }
+.project-card::after{
+  content:"";
+  position:absolute;
+  inset:2px;
+  z-index:0;
+  border-radius:22px;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255,90,0,.13),
+      #030100 72%
     );
-  });
+}
 
-  if (menuToggle && mainNav) {
-    menuToggle.addEventListener(
-      "click",
-      function () {
-        const isOpen =
-          mainNav.classList.toggle("open");
+.project-card:hover,
+.project-card:focus-within{
+  transform:translateY(-10px);
+  border-color:#ff8c42;
+  box-shadow:
+    0 18px 50px rgba(255,90,0,.28),
+    0 0 35px rgba(255,90,0,.22);
+}
 
-        menuToggle.setAttribute(
-          "aria-expanded",
-          isOpen ? "true" : "false"
-        );
-      }
+.project-link{
+  position:relative;
+  z-index:2;
+  height:100%;
+  padding:18px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  color:#ff8c42;
+  text-align:center;
+}
+
+.project-logo-frame{
+  position:relative;
+  width:100%;
+  aspect-ratio:1;
+  overflow:hidden;
+  border:1px solid rgba(255,140,66,.48);
+  border-radius:20px;
+  background:#000;
+  box-shadow:
+    0 0 22px rgba(255,90,0,.25),
+    inset 0 0 24px rgba(255,90,0,.12);
+  animation:logoFloat 6s ease-in-out infinite;
+}
+
+.project-card:nth-child(2) .project-logo-frame{
+  animation-delay:-1.5s;
+}
+
+.project-card:nth-child(3) .project-logo-frame{
+  animation-delay:-3s;
+}
+
+.project-card:nth-child(4) .project-logo-frame{
+  animation-delay:-4.5s;
+}
+
+.project-logo-frame img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  transform:scale(.97);
+  filter:
+    brightness(.98)
+    contrast(1.06)
+    drop-shadow(0 0 13px rgba(255,90,0,.4));
+  animation:logoPulse 4s ease-in-out infinite;
+}
+
+.project-card:nth-child(2) img{
+  animation-delay:-1s;
+}
+
+.project-card:nth-child(3) img{
+  animation-delay:-2s;
+}
+
+.project-card:nth-child(4) img{
+  animation-delay:-3s;
+}
+
+.project-light{
+  position:absolute;
+  top:-25%;
+  left:-70%;
+  width:45%;
+  height:150%;
+  z-index:3;
+  pointer-events:none;
+  transform:rotate(18deg);
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,176,102,.38),
+      transparent
     );
+  animation:logoLight 5.5s ease-in-out infinite;
+}
 
-    mainNav
-      .querySelectorAll("a")
-      .forEach(function (link) {
-        link.addEventListener(
-          "click",
-          function () {
-            mainNav.classList.remove("open");
+.project-card:nth-child(2) .project-light{
+  animation-delay:-1.3s;
+}
 
-            menuToggle.setAttribute(
-              "aria-expanded",
-              "false"
-            );
-          }
-        );
-      });
+.project-card:nth-child(3) .project-light{
+  animation-delay:-2.6s;
+}
+
+.project-card:nth-child(4) .project-light{
+  animation-delay:-3.9s;
+}
+
+.project-card h3{
+  margin-top:20px;
+  color:#ffb066;
+  font-size:1.05rem;
+  line-height:1.25;
+}
+
+.project-card p{
+  margin-top:8px;
+  font-size:.8rem;
+  font-weight:700;
+}
+
+.project-arrow{
+  width:42px;
+  height:42px;
+  margin-top:auto;
+  padding-top:18px;
+  display:grid;
+  place-items:center;
+  color:#000;
+  border-radius:50%;
+  background:#ff8c42;
+  font-size:1rem;
+}
+
+@keyframes projectOrbit{
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+@keyframes logoFloat{
+  0%,100%{
+    transform:translateY(0);
   }
 
-  if (currentYear) {
-    currentYear.textContent =
-      new Date().getFullYear();
+  50%{
+    transform:translateY(-9px);
+  }
+}
+
+@keyframes logoPulse{
+  0%,100%{
+    transform:scale(.96);
+    filter:
+      brightness(.92)
+      contrast(1.04)
+      drop-shadow(0 0 8px rgba(255,90,0,.28));
   }
 
-  document
-    .querySelectorAll("video")
-    .forEach(function (video) {
-      video.muted = true;
+  50%{
+    transform:scale(1);
+    filter:
+      brightness(1.18)
+      contrast(1.08)
+      drop-shadow(0 0 20px rgba(255,90,0,.72));
+  }
+}
 
-      const playRequest = video.play();
+@keyframes logoLight{
+  0%{
+    left:-70%;
+    opacity:0;
+  }
 
-      if (
-        playRequest &&
-        typeof playRequest.catch === "function"
-      ) {
-        playRequest.catch(function () {
-          /* Poster la ap rete vizib si autoplay bloke. */
-        });
-      }
-    });
+  20%{
+    opacity:1;
+  }
 
-  setLanguage(getSavedLanguage());
-});
+  55%{
+    left:130%;
+    opacity:.8;
+  }
+
+  100%{
+    left:130%;
+    opacity:0;
+  }
+}
+
+@media(max-width:1000px){
+  .projects-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media(max-width:600px){
+  .projects-showcase{
+    padding:75px 20px;
+  }
+
+  .projects-grid{
+    grid-template-columns:1fr;
+  }
+
+  .project-card{
+    max-width:430px;
+    margin:auto;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .project-card::before,
+  .project-logo-frame,
+  .project-logo-frame img,
+  .project-light{
+    animation:none !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header" id="top">
+  <div class="header-inner">
+
+    <a class="brand notranslate" href="#home" translate="no">
+      <span class="brand-mark">
+        <video
+          autoplay
+          loop
+          muted
+          playsinline
+          preload="metadata"
+          poster="devandevannet-1.png"
+          aria-label="Logo DEVAN DEVAN NÈT"
+        >
+          <source src="devan-devan-nèt-II.mp4" type="video/mp4">
+          <img
+            src="devandevannet-1.png"
+            alt="Logo DEVAN DEVAN NÈT"
+          >
+        </video>
+      </span>
+
+      <span class="brand-copy">
+        <strong>DEVAN DEVAN NÈT</strong>
+        <small>BSS1815 PRO-MAX DMP</small>
+      </span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      type="button"
+      aria-label="Ouvri meni an"
+      aria-expanded="false"
+      aria-controls="mainNav"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="#home" data-i18n="navHome">Akèy</a>
+      <a href="#projects">4 Pwojè</a>
+      <a href="#vision" data-i18n="navVision">Vizyon</a>
+      <a href="#commitment" data-i18n="navCommitment">Angajman</a>
+      <a href="#pillars" data-i18n="navPillars">Prensip</a>
+      <a href="#aiCenter">AI Center</a>
+      <a href="#movement" data-i18n="navMovement">Mouvman</a>
+      <a href="#contact" data-i18n="navContact">Kontak</a>
+    </nav>
+
+    <div class="language-switcher" aria-label="Chwazi lang">
+      <button class="lang-btn active" type="button" data-lang="ht">
+        HT
+      </button>
+
+      <button class="lang-btn" type="button" data-lang="fr">
+        FR
+      </button>
+
+      <button class="lang-btn" type="button" data-lang="en">
+        EN
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+
+  <div class="hero-content">
+
+    <p class="eyebrow" data-i18n="heroEyebrow">
+      YON MOUVMAN. YON VIZYON. YON AVNI.
+    </p>
+
+    <h1 class="notranslate" translate="no">
+      <span>DEVAN</span>
+      <span>DEVAN NÈT</span>
+    </h1>
+
+    <p class="hero-lead" data-i18n="heroLead">
+      Nou pa tann demen pou nou kòmanse. Nou bati jodi a avèk
+      vizyon, kouraj, teknoloji ak entèlijans.
+    </p>
+
+    <div class="btn-row">
+
+      <a class="btn btn-primary" href="#commitment">
+        <i class="fa-solid fa-book-open"></i>
+        <span data-i18n="readCommitment">
+          Li angajman an
+        </span>
+      </a>
+
+      <a class="btn btn-secondary" href="#projects">
+        <i class="fa-solid fa-layer-group"></i>
+        <span>Gade 4 pwojè yo</span>
+      </a>
+
+    </div>
+
+    <p class="hero-signature" data-i18n="heroSignature">
+      Bati pou jodi a. Pare pou demen. Toujou devan.
+    </p>
+
+  </div>
+
+  <div class="hero-media">
+
+    <div class="orbit-wrap one">
+      <div class="orbit orbit-one"></div>
+    </div>
+
+    <div class="orbit-wrap two">
+      <div class="orbit orbit-two"></div>
+    </div>
+
+    <div class="globe-stage">
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        preload="metadata"
+        poster="devandevannet-1.png"
+      >
+        <source src="devan-devan-nèt-II.mp4" type="video/mp4">
+
+        <img
+          src="devandevannet-1.png"
+          alt="Glòb DEVAN DEVAN NÈT"
+        >
+      </video>
+    </div>
+
+    <p class="orbit-message" data-i18n="orbitMessage">
+      NOUVÈL MOND LAN • VIZYON • INOVASYON • PWOGRÈ
+    </p>
+
+  </div>
+
+</section>
+
+<!-- 4 LOGO PWOJÈ YO -->
+
+<section class="projects-showcase" id="projects">
+
+  <div class="projects-heading">
+
+    <p class="eyebrow">
+      YON SÈL VIZYON • YON SÈL EKOSISTÈM
+    </p>
+
+    <h2>
+      Yon sèl platfòm ak 4 pwojè
+    </h2>
+
+    <p>
+      Chak pwojè gen pwòp misyon li, men yo tout ap mache
+      nan menm direksyon an — pwogrè.
+    </p>
+
+  </div>
+
+  <div class="projects-grid">
+
+    <article class="project-card">
+      <a class="project-link" href="#movement">
+
+        <div class="project-logo-frame">
+          <span class="project-light"></span>
+
+          <img
+            src="bss1815-pro-max-dmp-logo.png"
+            alt="Logo BSS1815 PRO-MAX DMP"
+          >
+        </div>
+
+        <h3>BSS1815 PRO-MAX DMP</h3>
+
+        <p>
+          Platfòm santral la ki konekte tout ekosistèm nan.
+        </p>
+
+        <span class="project-arrow">
+          <i class="fa-solid fa-arrow-right"></i>
+        </span>
+
+      </a>
+    </article>
+
+    <article class="project-card">
+      <a
+        class="project-link"
+        href="https://pro-maxfm.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <div class="project-logo-frame">
+          <span class="project-light"></span>
+
+          <img
+            src="pro-max-fm-logo.png"
+            alt="Logo PRO-MAX FM"
+          >
+        </div>
+
+        <h3>PRO-MAX FM</h3>
+
+        <p>
+          Radyo, nouvèl, mizik, podcast ak koneksyon mondyal.
+        </p>
+
+        <span class="project-arrow">
+          <i class="fa-solid fa-arrow-right"></i>
+        </span>
+
+      </a>
+    </article>
+
+    <article class="project-card">
+      <a
+        class="project-link"
+        href="https://bss1815promaxdmp.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <div class="project-logo-frame">
+          <span class="project-light"></span>
+
+          <img
+            src="maxima-multi-services-logo.png"
+            alt="Logo MAXIMA MULTI SERVICES"
+          >
+        </div>
+
+        <h3>MAXIMA MULTI SERVICES</h3>
+
+        <p>
+          Plizyè sèvis esansyèl nan yon sèl destinasyon.
+        </p>
+
+        <span class="project-arrow">
+          <i class="fa-solid fa-arrow-right"></i>
+        </span>
+
+      </a>
+    </article>
+
+    <article class="project-card">
+      <a
+        class="project-link"
+        href="#aiCenter"
+      >
+
+        <div class="project-logo-frame">
+          <span class="project-light"></span>
+
+          <img
+            src="pro-max-academie-logo.png"
+            alt="Logo PRO-MAX ACADÉMIE"
+          >
+        </div>
+
+        <h3>PRO-MAX ACADÉMIE</h3>
+
+        <p>
+          Aprann, evolye epi prepare pou opòtinite demen yo.
+        </p>
+
+        <span class="project-arrow">
+          <i class="fa-solid fa-arrow-right"></i>
+        </span>
+
+      </a>
+    </article>
+
+  </div>
+
+</section>
+
+<section class="section" id="vision">
+
+  <p class="section-number">01</p>
+
+  <p class="eyebrow" data-i18n="visionEyebrow">
+    VIZYON NOU
+  </p>
+
+  <h2 class="section-title" data-i18n="visionTitle">
+    Nou chwazi avanse
+  </h2>
+
+  <div class="vision-grid">
+
+    <article class="statement-card statement-card-large">
+
+      <i class="fa-solid fa-rocket"></i>
+
+      <p data-i18n="visionStatement">
+        DEVAN DEVAN NÈT se yon mouvman ki ankouraje chak moun
+        leve tèt li, devlope kapasite li epi sèvi ak zouti modèn
+        yo pou konstwi yon avni ki pi solid.
+      </p>
+
+    </article>
+
+    <article class="statement-card">
+
+      <span class="card-letter">A</span>
+
+      <h3 data-i18n="actionTitle">
+        Aksyon
+      </h3>
+
+      <p data-i18n="actionText">
+        Nou transfòme lide an aksyon konkrè ki pote rezilta.
+      </p>
+
+    </article>
+
+    <article class="statement-card">
+
+      <span class="card-letter">B</span>
+
+      <h3 data-i18n="futureTitle">
+        Lavni
+      </h3>
+
+      <p data-i18n="futureText">
+        Nou prepare jenerasyon jodi a pou opòtinite demen yo.
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+<section class="commitment-section" id="commitment">
+
+  <div class="commitment-inner">
+
+    <div>
+
+      <p class="section-number">02</p>
+
+      <p class="eyebrow" data-i18n="commitmentEyebrow">
+        DEKLARASYON ANGAJMAN
+      </p>
+
+      <h2
+        class="section-title"
+        data-i18n="commitmentTitle"
+      >
+        Nou pap viv ap gade mond lan pase devan nou
+      </h2>
+
+      <p
+        class="commitment-lead"
+        data-i18n="commitmentLead"
+      >
+        Nou refize rete prizonye laperèz, reta, konfizyon ak
+        sistèm ki pa adapte ak epòk nou an.
+      </p>
+
+      <div class="commitment-lines">
+
+        <p data-i18n="commitmentLine1">
+          Nou kwè nan edikasyon ki louvri lespri.
+        </p>
+
+        <p data-i18n="commitmentLine2">
+          Nou kwè nan teknoloji ki ranfòse kapasite moun.
+        </p>
+
+        <p data-i18n="commitmentLine3">
+          Nou kwè nan disiplin, kolaborasyon ak responsablite.
+        </p>
+
+        <p data-i18n="commitmentLine4">
+          Nou kwè pwogrè kòmanse lè nou deside aji.
+        </p>
+
+      </div>
+
+      <blockquote
+        class="commitment-quote"
+        data-i18n="commitmentQuote"
+      >
+        “Nou pa la pou nou swiv tras lavni.
+        Nou la pou nou trase chemen li.”
+      </blockquote>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section" id="pillars">
+
+  <p class="section-number">03</p>
+
+  <p class="eyebrow" data-i18n="pillarsEyebrow">
+    PRENSIP MOUVMAN AN
+  </p>
+
+  <h2 class="section-title" data-i18n="pillarsTitle">
+    Kat fòs ki pouse nou devan
+  </h2>
+
+  <div class="pillars-grid">
+
+    <article class="pillar-card">
+
+      <span class="pillar-number">01</span>
+
+      <div class="pillar-icon">
+        <i class="fa-solid fa-eye"></i>
+      </div>
+
+      <h3 data-i18n="pillarVisionTitle">
+        Vizyon
+      </h3>
+
+      <p data-i18n="pillarVisionText">
+        Wè pi lwen pase pwoblèm jodi a pou prepare
+        solisyon demen yo.
+      </p>
+
+    </article>
+
+    <article class="pillar-card">
+
+      <span class="pillar-number">02</span>
+
+      <div class="pillar-icon">
+        <i class="fa-solid fa-graduation-cap"></i>
+      </div>
+
+      <h3 data-i18n="pillarEducationTitle">
+        Edikasyon
+      </h3>
+
+      <p data-i18n="pillarEducationText">
+        Aprann, pataje konesans epi devlope tout kapasite nou.
+      </p>
+
+    </article>
+
+    <article class="pillar-card">
+
+      <span class="pillar-number">03</span>
+
+      <div class="pillar-icon">
+        <i class="fa-solid fa-microchip"></i>
+      </div>
+
+      <h3 data-i18n="pillarInnovationTitle">
+        Inovasyon
+      </h3>
+
+      <p data-i18n="pillarInnovationText">
+        Sèvi ak teknoloji ak entèlijans atifisyèl avèk sajès.
+      </p>
+
+    </article>
+
+    <article class="pillar-card">
+
+      <span class="pillar-number">04</span>
+
+      <div class="pillar-icon">
+        <i class="fa-solid fa-people-group"></i>
+      </div>
+
+      <h3 data-i18n="pillarUnityTitle">
+        Inite
+      </h3>
+
+      <p data-i18n="pillarUnityText">
+        Rasanble eksperyans ansyen yo ak enèji
+        nouvo jenerasyon an.
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+<section class="section" id="aiCenter">
+
+  <div class="ai-command">
+
+    <div class="ai-visual">
+
+      <div class="tech-ring-wrap">
+        <div
+          class="tech-ring"
+          style="width:92%;height:39%"
+        ></div>
+      </div>
+
+      <div
+        class="tech-ring-wrap"
+        style="transform:rotate(-25deg)"
+      >
+        <div
+          class="tech-ring"
+          style="
+            width:58%;
+            height:94%;
+            animation-direction:reverse;
+          "
+        ></div>
+      </div>
+
+      <div class="ai-globe">
+
+        <video
+          autoplay
+          loop
+          muted
+          playsinline
+          preload="metadata"
+          poster="devandevannet-1.png"
+        >
+
+          <source
+            src="devan-devan-nèt-II.mp4"
+            type="video/mp4"
+          >
+
+          <img
+            src="devandevannet-1.png"
+            alt="AI Center DEVAN DEVAN NÈT"
+          >
+
+        </video>
+
+      </div>
+
+    </div>
+
+    <div>
+
+      <p class="eyebrow">
+        AI CENTER •
+        <span data-i18n="aiCommand">
+          SANT KÒMAND DIJITAL
+        </span>
+      </p>
+
+      <h2 class="ai-title" data-i18n="aiTitle">
+        Teknoloji pa ranplase vizyon.
+        Li bay vizyon plis pouvwa.
+      </h2>
+
+      <p class="ai-text" data-i18n="aiText">
+        Nou itilize entèlijans atifisyèl pou aprann pi vit,
+        òganize pi byen, kreye plis opòtinite epi sèvi
+        kominote nou an avèk plis efikasite.
+      </p>
+
+      <div class="ai-tools">
+
+        <div class="ai-tool">
+          <i class="fa-solid fa-comments"></i>
+          <span data-i18n="aiAssistant">
+            Asistan AI
+          </span>
+        </div>
+
+        <div class="ai-tool">
+          <i class="fa-solid fa-pen-nib"></i>
+          <span data-i18n="aiWriter">
+            Ekriven AI
+          </span>
+        </div>
+
+        <div class="ai-tool">
+          <i class="fa-solid fa-microphone"></i>
+          <span data-i18n="voiceStudio">
+            Estidyo vwa
+          </span>
+        </div>
+
+        <div class="ai-tool">
+          <i class="fa-solid fa-network-wired"></i>
+          <span data-i18n="digitalNetwork">
+            Rezo dijital
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section" id="movement">
+
+  <div class="movement-panel">
+
+    <p class="eyebrow" data-i18n="movementEyebrow">
+      MOMAN AN RIVE
+    </p>
+
+    <h2
+      class="movement-title"
+      data-i18n="movementTitle"
+    >
+      Pa rete dèyè. Pran plas ou nan mouvman an.
+    </h2>
+
+    <p
+      class="movement-text"
+      data-i18n="movementText"
+    >
+      DEVAN DEVAN NÈT se pou moun ki pare pou aprann,
+      konstwi, kolabore epi avanse. Chak moun gen yon
+      kapasite. Chak kapasite gen yon plas.
+    </p>
+
+    <div class="btn-row">
+
+      <a
+        class="btn btn-primary"
+        href="mailto:bss1815promaxdmp@gmail.com"
+      >
+        <i class="fa-solid fa-envelope"></i>
+
+        <span data-i18n="contactUs">
+          Kontakte nou
+        </span>
+      </a>
+
+      <a
+        class="btn btn-secondary"
+        href="https://bss1815promaxdmp.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        <span data-i18n="backPlatform">
+          Retounen nan BSS1815 PRO-MAX DMP
+        </span>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section" id="contact">
+
+  <p class="section-number">04</p>
+
+  <p class="eyebrow" data-i18n="contactEyebrow">
+    KONEKTE AK NOU
+  </p>
+
+  <h2 class="section-title" data-i18n="contactTitle">
+    Kontak ofisyèl ak rezo sosyal yo
+  </h2>
+
+  <div class="contact-grid">
+
+    <article class="contact-card">
+
+      <h3 data-i18n="phoneTitle">
+        Nimewo telefòn
+      </h3>
+
+      <div class="contact-list">
+
+        <a href="tel:+14076405166">
+          <i class="fa-solid fa-phone"></i>
+          (407) 640-5166
+        </a>
+
+        <a href="tel:+15162168494">
+          <i class="fa-solid fa-phone"></i>
+          (516) 216-8494
+        </a>
+
+        <a href="tel:+13175381150">
+          <i class="fa-solid fa-phone"></i>
+          (317) 538-1150
+        </a>
+
+        <a href="tel:+50943437488">
+          <i class="fa-solid fa-phone"></i>
+          HAITI +509 43 43 74 88
+        </a>
+
+      </div>
+
+    </article>
+
+    <article class="contact-card">
+
+      <h3 data-i18n="digitalTitle">
+        Kontak dijital
+      </h3>
+
+      <div class="contact-list">
+
+        <a
+          href="https://bss1815promaxdmp.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-solid fa-globe"></i>
+          bss1815promaxdmp.com
+        </a>
+
+        <a href="mailto:bss1815promaxdmp@gmail.com">
+          <i class="fa-solid fa-envelope"></i>
+          bss1815promaxdmp@gmail.com
+        </a>
+
+      </div>
+
+    </article>
+
+  </div>
+
+  <div class="social-grid">
+
+    <a
+      class="social-link"
+      href="https://www.facebook.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Facebook"
+    >
+      <i class="fa-brands fa-facebook-f"></i>
+      FACEBOOK
+    </a>
+
+    <a
+      class="social-link"
+      href="https://wa.me/14076405166"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="WhatsApp"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+      WHATSAPP
+    </a>
+
+    <a
+      class="social-link"
+      href="https://www.instagram.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Instagram"
+    >
+      <i class="fa-brands fa-instagram"></i>
+      INSTAGRAM
+    </a>
+
+    <a
+      class="social-link"
+      href="https://www.tiktok.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="TikTok"
+    >
+      <i class="fa-brands fa-tiktok"></i>
+      TIKTOK
+    </a>
+
+    <a
+      class="social-link"
+      href="https://x.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="X Twitter"
+    >
+      <i class="fa-brands fa-x-twitter"></i>
+      X / TWITTER
+    </a>
+
+    <a
+      class="social-link"
+      href="https://truthsocial.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Truth Social"
+    >
+      <i class="fa-solid fa-circle-check"></i>
+      TRUE SOCIAL
+    </a>
+
+    <a
+      class="social-link"
+      href="https://www.youtube.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="YouTube"
+    >
+      <i class="fa-brands fa-youtube"></i>
+      YOUTUBE
+    </a>
+
+    <a
+      class="social-link"
+      href="https://open.spotify.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Spotify"
+    >
+      <i class="fa-brands fa-spotify"></i>
+      SPOTIFY
+    </a>
+
+    <a
+      class="social-link"
+      href="https://www.linkedin.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="LinkedIn"
+    >
+      <i class="fa-brands fa-linkedin-in"></i>
+      LINKEDIN
+    </a>
+
+    <a
+      class="social-link"
+      href="mailto:bss1815promaxdmp@gmail.com"
+      aria-label="Email"
+    >
+      <i class="fa-solid fa-envelope"></i>
+      EMAIL
+    </a>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer class="site-footer">
+
+  <div>
+
+    <strong
+      class="footer-brand notranslate"
+      translate="no"
+    >
+      DEVAN DEVAN NÈT
+    </strong>
+
+    <p data-i18n="footerSlogan">
+      Bati pou jodi a. Pare pou demen.
+    </p>
+
+  </div>
+
+  <div>
+
+    <p data-i18n="founderCredit">
+      Yon vizyon Max Louis, alias Le Baron
+    </p>
+
+    <p class="notranslate" translate="no">
+      BSS1815 PRO-MAX DMP
+    </p>
+
+  </div>
+
+  <a href="#top" data-i18n="backTop">
+    Retounen anlè ↑
+  </a>
+
+  <p class="copyright">
+
+    &copy;
+    <span id="currentYear"></span>
+
+    <span class="notranslate" translate="no">
+      DEVAN DEVAN NÈT.
+    </span>
+
+    <span data-i18n="rights">
+      Tout dwa rezève.
+    </span>
+
+  </p>
+
+</footer>
+
+<script src="Javascript.js"></script>
+
+</body>
+</html>
