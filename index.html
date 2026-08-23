@@ -6,7 +6,6 @@
 
   <meta name="theme-color" content="#000000">
   <meta name="description" content="DEVAN DEVAN NÈT — yon mouvman vizyon, inovasyon, edikasyon ak pwogrè ki entegre nan BSS1815 PRO-MAX DMP.">
-  <meta name="keywords" content="DEVAN DEVAN NÈT, DDN, BSS1815, PRO-MAX DMP, innovation, intelligence artificielle, progrès">
   <meta name="author" content="Max Louis, alias Le Baron">
 
   <meta property="og:title" content="DEVAN DEVAN NÈT">
@@ -14,6 +13,11 @@
   <meta property="og:type" content="website">
 
   <title>DEVAN DEVAN NÈT | BSS1815 PRO-MAX DMP</title>
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  >
 
   <style>
     :root {
@@ -40,7 +44,12 @@
     body {
       background:
         radial-gradient(circle at 80% 8%, #3a1200 0, transparent 32%),
-        linear-gradient(145deg, var(--black), var(--black-soft), var(--black));
+        linear-gradient(
+          145deg,
+          var(--black),
+          var(--black-soft),
+          var(--black)
+        );
       color: var(--orange);
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.6;
@@ -120,6 +129,21 @@
       display: block;
     }
 
+    .logo-fallback {
+      display: none;
+      font-size: 0.9rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .brand-mark.logo-error img {
+      display: none;
+    }
+
+    .brand-mark.logo-error .logo-fallback {
+      display: block;
+    }
+
     .brand-copy {
       display: flex;
       flex-direction: column;
@@ -179,6 +203,7 @@
       padding: 8px;
       background: transparent;
       border: 1px solid var(--line);
+      cursor: pointer;
     }
 
     .menu-toggle span:not(.sr-only) {
@@ -301,6 +326,8 @@
 
     .globe-stage video,
     .globe-stage img {
+      position: relative;
+      z-index: 1;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -310,7 +337,7 @@
     .video-fallback {
       position: absolute;
       inset: 0;
-      z-index: -1;
+      z-index: 0;
       display: grid;
       place-content: center;
       text-align: center;
@@ -410,8 +437,8 @@
     }
 
     .statement-card,
-    .pillar-card {
-      min-height: 220px;
+    .pillar-card,
+    .ai-feature {
       padding: 30px;
       background: linear-gradient(
         145deg,
@@ -419,6 +446,10 @@
         rgba(0, 0, 0, 0.85)
       );
       border: 1px solid var(--line);
+    }
+
+    .statement-card {
+      min-height: 220px;
     }
 
     .statement-card-large {
@@ -502,38 +533,41 @@
     }
 
     .intelligence-section {
-      display: grid;
-      grid-template-columns: 0.7fr 1.3fr;
-      align-items: center;
-      gap: 55px;
+      display: block;
     }
 
-    .intelligence-visual {
-      position: relative;
-      width: min(310px, 70vw);
-      aspect-ratio: 1;
-      display: grid;
-      place-items: center;
-      border: 2px solid var(--orange);
-      border-radius: 50%;
-      box-shadow: 0 0 45px rgba(255, 90, 0, 0.35);
-    }
-
-    .intelligence-visual strong {
-      font-size: 7rem;
-    }
-
-    .ai-ring {
-      position: absolute;
-      inset: 18px;
-      border: 1px dashed var(--orange);
-      border-radius: 50%;
-      animation: spin 8s linear infinite;
+    .intelligence-copy {
+      max-width: 900px;
+      margin-bottom: 35px;
     }
 
     .intelligence-copy p:last-child {
       margin-top: 22px;
       font-size: 1.15rem;
+    }
+
+    .ai-features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .ai-feature {
+      min-height: 220px;
+    }
+
+    .ai-feature i {
+      margin-bottom: 18px;
+      font-size: 2.3rem;
+    }
+
+    .ai-feature h3 {
+      margin-bottom: 10px;
+      font-size: 1.25rem;
+    }
+
+    .ai-feature p {
+      font-size: 0.95rem;
     }
 
     .movement-panel {
@@ -593,16 +627,21 @@
     }
 
     .social-link {
-      min-height: 58px;
+      min-height: 70px;
       padding: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 9px;
       text-align: center;
       border: 1px solid var(--orange);
       font-size: 0.75rem;
       font-weight: 900;
       transition: 0.2s;
+    }
+
+    .social-link i {
+      font-size: 1.55rem;
     }
 
     .social-link:hover {
@@ -660,7 +699,7 @@
         display: none;
         padding: 22px;
         flex-direction: column;
-        background: #000000;
+        background: var(--black);
         border-bottom: 1px solid var(--orange);
       }
 
@@ -681,7 +720,8 @@
         letter-spacing: -3px;
       }
 
-      .pillars-grid {
+      .pillars-grid,
+      .ai-features {
         grid-template-columns: repeat(2, 1fr);
       }
 
@@ -712,8 +752,7 @@
       }
 
       .vision-grid,
-      .contact-grid,
-      .intelligence-section {
+      .contact-grid {
         grid-template-columns: 1fr;
       }
 
@@ -721,16 +760,13 @@
         grid-row: auto;
       }
 
-      .pillars-grid {
+      .pillars-grid,
+      .ai-features {
         grid-template-columns: 1fr;
       }
 
       .site-footer {
         grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .footer-credit {
         text-align: center;
       }
 
@@ -766,13 +802,14 @@
   <header class="site-header" id="top">
     <div class="header-inner">
 
-      <a class="brand" href="#top" aria-label="DEVAN DEVAN NÈT — Paj dakèy">
+      <a class="brand" href="#top" aria-label="DEVAN DEVAN NÈT">
         <span class="brand-mark">
           <img
             src="./devandevannet.png"
             alt="Logo DEVAN DEVAN NÈT"
-            onerror="this.onerror=null;this.src='./devandevanner.png';"
+            onerror="this.parentElement.classList.add('logo-error')"
           >
+          <span class="logo-fallback">DDN</span>
         </span>
 
         <span class="brand-copy">
@@ -799,6 +836,7 @@
         <a href="#vision" data-i18n="navVision">Vizyon</a>
         <a href="#manifesto" data-i18n="navManifesto">Manifest</a>
         <a href="#pillars" data-i18n="navPillars">Prensip</a>
+        <a href="#aiCenter">AI Center</a>
         <a href="#movement" data-i18n="navMovement">Mouvman an</a>
         <a href="#contact" data-i18n="navContact">Kontak</a>
       </nav>
@@ -822,8 +860,8 @@
         </p>
 
         <h1 id="heroTitle">
-          <span data-i18n="heroTitleLine1">DEVAN</span>
-          <span data-i18n="heroTitleLine2">DEVAN NÈT</span>
+          <span>DEVAN</span>
+          <span>DEVAN NÈT</span>
         </h1>
 
         <p class="hero-lead" data-i18n="heroLead">
@@ -846,7 +884,7 @@
         </p>
       </div>
 
-      <div class="hero-media" aria-label="Prezantasyon vizyèl DEVAN DEVAN NÈT">
+      <div class="hero-media" aria-label="Prezantasyon DEVAN DEVAN NÈT">
         <div class="orbit orbit-one" aria-hidden="true"></div>
         <div class="orbit orbit-two" aria-hidden="true"></div>
 
@@ -860,6 +898,7 @@
             preload="auto"
             poster="./devandevannet.png"
             aria-label="Logo anime DEVAN DEVAN NÈT"
+            onerror="this.style.display='none'"
           >
             <source src="./devan-devan-net-II.mp4" type="video/mp4">
           </video>
@@ -875,21 +914,22 @@
         </p>
       </div>
 
-      <a class="scroll-cue" href="#vision" aria-label="Kontinye desann">
+      <a class="scroll-cue" href="#vision">
         <span data-i18n="discover">Dekouvri</span>
         <span aria-hidden="true">↓</span>
       </a>
     </section>
 
-    <section class="section vision-section" id="vision" aria-labelledby="visionTitle">
+    <section class="section" id="vision" aria-labelledby="visionTitle">
       <div class="section-heading">
         <p class="section-number">01</p>
         <p class="eyebrow" data-i18n="visionEyebrow">VIZYON NOU</p>
-        <h2 id="visionTitle" data-i18n="visionTitle">Nou chwazi avanse</h2>
+        <h2 id="visionTitle" data-i18n="visionTitle">
+          Nou chwazi avanse
+        </h2>
       </div>
 
       <div class="vision-grid">
-
         <article class="statement-card statement-card-large">
           <p data-i18n="visionStatement">
             DEVAN DEVAN NÈT se yon mouvman ki ankouraje chak moun leve tèt li,
@@ -913,14 +953,20 @@
             Nou prepare jenerasyon jodi a pou opòtinite demen yo.
           </p>
         </article>
-
       </div>
     </section>
 
-    <section class="section manifesto-section" id="manifesto" aria-labelledby="manifestoTitle">
+    <section
+      class="section manifesto-section"
+      id="manifesto"
+      aria-labelledby="manifestoTitle"
+    >
       <div class="section-heading centered">
         <p class="section-number">02</p>
-        <p class="eyebrow" data-i18n="manifestoEyebrow">MANIFEST OFISYÈL</p>
+        <p class="eyebrow" data-i18n="manifestoEyebrow">
+          MANIFEST OFISYÈL
+        </p>
+
         <h2 id="manifestoTitle" data-i18n="manifestoTitle">
           Nou pap viv ap gade mond lan pase devan nou
         </h2>
@@ -928,8 +974,8 @@
 
       <div class="manifesto-content">
         <p class="manifesto-lead" data-i18n="manifestoLead">
-          Nou refize rete prizonye laperèz, reta, konfizyon ak sistèm ki pa adapte
-          ak epòk nou an.
+          Nou refize rete prizonye laperèz, reta, konfizyon ak sistèm ki pa
+          adapte ak epòk nou an.
         </p>
 
         <div class="manifesto-lines">
@@ -956,17 +1002,19 @@
       </div>
     </section>
 
-    <section class="section pillars-section" id="pillars" aria-labelledby="pillarsTitle">
+    <section class="section" id="pillars" aria-labelledby="pillarsTitle">
       <div class="section-heading">
         <p class="section-number">03</p>
-        <p class="eyebrow" data-i18n="pillarsEyebrow">PRENSIP MOUVMAN AN</p>
+        <p class="eyebrow" data-i18n="pillarsEyebrow">
+          PRENSIP MOUVMAN AN
+        </p>
+
         <h2 id="pillarsTitle" data-i18n="pillarsTitle">
           Kat fòs ki pouse nou devan
         </h2>
       </div>
 
       <div class="pillars-grid">
-
         <article class="pillar-card">
           <span class="pillar-number">01</span>
           <h3 data-i18n="pillarVisionTitle">Vizyon</h3>
@@ -998,19 +1046,17 @@
             Rasanble eksperyans ansyen yo ak enèji nouvo jenerasyon an.
           </p>
         </article>
-
       </div>
     </section>
 
-    <section class="section intelligence-section" aria-labelledby="intelligenceTitle">
-      <div class="intelligence-visual" aria-hidden="true">
-        <span class="ai-ring"></span>
-        <strong>AI</strong>
-      </div>
-
+    <section
+      class="section intelligence-section"
+      id="aiCenter"
+      aria-labelledby="intelligenceTitle"
+    >
       <div class="intelligence-copy">
         <p class="eyebrow" data-i18n="intelligenceEyebrow">
-          ENTÈLIJANS ATIFISYÈL
+          AI CENTER
         </p>
 
         <h2 id="intelligenceTitle" data-i18n="intelligenceTitle">
@@ -1018,24 +1064,63 @@
         </h2>
 
         <p data-i18n="intelligenceText">
-          Nou itilize entèlijans atifisyèl kòm yon zouti pou aprann pi vit,
-          òganize pi byen, kreye plis opòtinite epi sèvi kominote nou an avèk
-          plis efikasite.
+          Nou itilize entèlijans atifisyèl pou aprann pi vit, òganize pi byen,
+          kreye plis opòtinite epi sèvi kominote nou an avèk plis efikasite.
         </p>
+      </div>
+
+      <div class="ai-features">
+        <article class="ai-feature">
+          <i class="fa-solid fa-comments" aria-hidden="true"></i>
+          <h3>AI Assistant</h3>
+          <p data-i18n="aiAssistantText">
+            Jwenn asistans rapid pou kesyon, rechèch ak òganizasyon travay.
+          </p>
+        </article>
+
+        <article class="ai-feature">
+          <i class="fa-solid fa-pen-nib" aria-hidden="true"></i>
+          <h3>AI Writer</h3>
+          <p data-i18n="aiWriterText">
+            Prepare mesaj, dokiman, prezantasyon ak kontni pwofesyonèl.
+          </p>
+        </article>
+
+        <article class="ai-feature">
+          <i class="fa-solid fa-microphone-lines" aria-hidden="true"></i>
+          <h3>AI Voice Studio</h3>
+          <p data-i18n="aiVoiceText">
+            Kreye vwa ak narasyon pou videyo, anons ak pwojè kominotè.
+          </p>
+        </article>
+
+        <article class="ai-feature">
+          <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+          <h3>Digital Innovation</h3>
+          <p data-i18n="aiInnovationText">
+            Transfòme lide an solisyon dijital ki itil, modèn ak efikas.
+          </p>
+        </article>
       </div>
     </section>
 
-    <section class="section movement-section" id="movement" aria-labelledby="movementTitle">
+    <section
+      class="section movement-section"
+      id="movement"
+      aria-labelledby="movementTitle"
+    >
       <div class="movement-panel">
-        <p class="eyebrow" data-i18n="movementEyebrow">MOMAN AN RIVE</p>
+        <p class="eyebrow" data-i18n="movementEyebrow">
+          MOMAN AN RIVE
+        </p>
 
         <h2 id="movementTitle" data-i18n="movementTitle">
           Pa rete dèyè. Pran plas ou nan mouvman an.
         </h2>
 
         <p data-i18n="movementText">
-          DEVAN DEVAN NÈT se pou moun ki pare pou aprann, konstwi, kolabore epi
-          avanse. Chak moun gen yon kapasite. Chak kapasite gen yon plas.
+          DEVAN DEVAN NÈT se pou moun ki pare pou aprann, konstwi, kolabore
+          epi avanse. Chak moun gen yon kapasite. Chak kapasite gen yon plas.
         </p>
 
         <div class="movement-actions">
@@ -1060,17 +1145,23 @@
       </div>
     </section>
 
-    <section class="section contact-section" id="contact" aria-labelledby="contactTitle">
+    <section
+      class="section contact-section"
+      id="contact"
+      aria-labelledby="contactTitle"
+    >
       <div class="section-heading centered">
         <p class="section-number">04</p>
-        <p class="eyebrow" data-i18n="contactEyebrow">KONEKTE AK NOU</p>
+        <p class="eyebrow" data-i18n="contactEyebrow">
+          KONEKTE AK NOU
+        </p>
+
         <h2 id="contactTitle" data-i18n="contactTitle">
           Kontak ofisyèl ak rezo sosyal yo
         </h2>
       </div>
 
       <div class="contact-grid">
-
         <article class="contact-card">
           <h3 data-i18n="phoneTitle">Nimewo telefòn</h3>
 
@@ -1099,20 +1190,110 @@
             </a>
           </div>
         </article>
-
       </div>
 
       <div class="social-grid" aria-label="Rezo sosyal DEVAN DEVAN NÈT">
-        <a class="social-link" href="#" data-network="facebook">FACEBOOK</a>
-        <a class="social-link" href="#" data-network="whatsapp">WHATSAPP</a>
-        <a class="social-link" href="#" data-network="instagram">INSTAGRAM</a>
-        <a class="social-link" href="#" data-network="tiktok">TIKTOK</a>
-        <a class="social-link" href="#" data-network="telegram">TELEGRAM</a>
-        <a class="social-link" href="#" data-network="x">X / TWITTER</a>
-        <a class="social-link" href="#" data-network="truthsocial">TRUE SOCIAL</a>
-        <a class="social-link" href="#" data-network="youtube">YOUTUBE</a>
-        <a class="social-link" href="#" data-network="spotify">SPOTIFY</a>
-        <a class="social-link" href="#" data-network="linkedin">LINKEDIN</a>
+
+        <a
+          class="social-link"
+          href="https://www.facebook.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-facebook-f"></i>
+          <span>FACEBOOK</span>
+        </a>
+
+        <a
+          class="social-link"
+          href="https://wa.me/14076405166"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>WHATSAPP</span>
+        </a>
+
+        <a
+          class="social-link"
+          href="https://www.instagram.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-instagram"></i>
+          <span>INSTAGRAM</span>
+        </a>
+
+        <a
+          class="social-link"
+          href="https://www.tiktok.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-tiktok"></i>
+          <span>TIKTOK</span>
+        </a>
+
+        <a
+          class="social-link"
+          href="https://t.me/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-telegram"></i>
+          <span>TELEGRAM</span>
+        </a>
+
+        <a
+          class="social-link"
+          href="https://x.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-x-twitter"></i>
+          <span>X / TWITTER</span>
+        </a>
+
+        <a
+          class="social-link"
+          href="https://truthsocial.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-solid fa-circle-check"></i>
+          <span>TRUE SOCIAL</span>
+        </a>
+
+        <a
+          class="social-link"
+          href="https://www.youtube.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-youtube"></i>
+          <span>YOUTUBE</span>
+        </a>
+
+        <a
+          class="social-link"
+          href="https://open.spotify.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-spotify"></i>
+          <span>SPOTIFY</span>
+        </a>
+
+        <a
+          class="social-link"
+          href="https://www.linkedin.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-linkedin-in"></i>
+          <span>LINKEDIN</span>
+        </a>
+
       </div>
     </section>
 
@@ -1121,11 +1302,15 @@
   <footer class="site-footer">
     <div class="footer-brand">
       <strong>DEVAN DEVAN NÈT</strong>
-      <p data-i18n="footerSlogan">Bati pou jodi a. Pare pou demen.</p>
+      <p data-i18n="footerSlogan">
+        Bati pou jodi a. Pare pou demen.
+      </p>
     </div>
 
     <div class="footer-credit">
-      <p data-i18n="founderCredit">Yon vizyon Max Louis, alias Le Baron</p>
+      <p data-i18n="founderCredit">
+        Yon vizyon Max Louis, alias Le Baron
+      </p>
       <p>BSS1815 PRO-MAX DMP</p>
     </div>
 
@@ -1158,8 +1343,6 @@
         navContact: "Kontak",
 
         heroEyebrow: "YON MOUVMAN. YON VIZYON. YON AVNI.",
-        heroTitleLine1: "DEVAN",
-        heroTitleLine2: "DEVAN NÈT",
         heroLead: "Nou pa tann demen pou nou kòmanse. Nou bati jodi a avèk vizyon, kouraj, teknoloji ak entèlijans.",
         readManifesto: "Li manifest la",
         joinMovement: "Antre nan mouvman an",
@@ -1195,9 +1378,13 @@
         pillarUnityTitle: "Inite",
         pillarUnityText: "Rasanble eksperyans ansyen yo ak enèji nouvo jenerasyon an.",
 
-        intelligenceEyebrow: "ENTÈLIJANS ATIFISYÈL",
+        intelligenceEyebrow: "AI CENTER",
         intelligenceTitle: "Teknoloji pa ranplase vizyon. Li bay vizyon plis pouvwa.",
-        intelligenceText: "Nou itilize entèlijans atifisyèl kòm yon zouti pou aprann pi vit, òganize pi byen, kreye plis opòtinite epi sèvi kominote nou an avèk plis efikasite.",
+        intelligenceText: "Nou itilize entèlijans atifisyèl pou aprann pi vit, òganize pi byen, kreye plis opòtinite epi sèvi kominote nou an avèk plis efikasite.",
+        aiAssistantText: "Jwenn asistans rapid pou kesyon, rechèch ak òganizasyon travay.",
+        aiWriterText: "Prepare mesaj, dokiman, prezantasyon ak kontni pwofesyonèl.",
+        aiVoiceText: "Kreye vwa ak narasyon pou videyo, anons ak pwojè kominotè.",
+        aiInnovationText: "Transfòme lide an solisyon dijital ki itil, modèn ak efikas.",
 
         movementEyebrow: "MOMAN AN RIVE",
         movementTitle: "Pa rete dèyè. Pran plas ou nan mouvman an.",
@@ -1227,8 +1414,6 @@
         navContact: "Contact",
 
         heroEyebrow: "UN MOUVEMENT. UNE VISION. UN AVENIR.",
-        heroTitleLine1: "DEVANT",
-        heroTitleLine2: "TOUJOURS DEVANT",
         heroLead: "Nous n’attendons pas demain pour commencer. Nous construisons aujourd’hui avec vision, courage, technologie et intelligence.",
         readManifesto: "Lire le manifeste",
         joinMovement: "Rejoindre le mouvement",
@@ -1264,9 +1449,13 @@
         pillarUnityTitle: "Unité",
         pillarUnityText: "Réunir l’expérience des anciens et l’énergie de la nouvelle génération.",
 
-        intelligenceEyebrow: "INTELLIGENCE ARTIFICIELLE",
+        intelligenceEyebrow: "AI CENTER",
         intelligenceTitle: "La technologie ne remplace pas la vision. Elle lui donne davantage de puissance.",
         intelligenceText: "Nous utilisons l’intelligence artificielle pour apprendre plus rapidement, mieux nous organiser, créer davantage de possibilités et servir notre communauté plus efficacement.",
+        aiAssistantText: "Obtenez une assistance rapide pour les questions, la recherche et l’organisation du travail.",
+        aiWriterText: "Préparez des messages, documents, présentations et contenus professionnels.",
+        aiVoiceText: "Créez des voix et narrations pour les vidéos, annonces et projets communautaires.",
+        aiInnovationText: "Transformez les idées en solutions numériques utiles, modernes et efficaces.",
 
         movementEyebrow: "LE MOMENT EST VENU",
         movementTitle: "Ne restez pas en arrière. Prenez votre place dans le mouvement.",
@@ -1296,8 +1485,6 @@
         navContact: "Contact",
 
         heroEyebrow: "ONE MOVEMENT. ONE VISION. ONE FUTURE.",
-        heroTitleLine1: "FORWARD",
-        heroTitleLine2: "ALWAYS FORWARD",
         heroLead: "We do not wait for tomorrow to begin. We build today with vision, courage, technology and intelligence.",
         readManifesto: "Read the manifesto",
         joinMovement: "Join the movement",
@@ -1333,9 +1520,13 @@
         pillarUnityTitle: "Unity",
         pillarUnityText: "Bring together the experience of elders and the energy of the new generation.",
 
-        intelligenceEyebrow: "ARTIFICIAL INTELLIGENCE",
+        intelligenceEyebrow: "AI CENTER",
         intelligenceTitle: "Technology does not replace vision. It gives vision more power.",
         intelligenceText: "We use artificial intelligence to learn faster, organize better, create more opportunities and serve our community more effectively.",
+        aiAssistantText: "Get rapid assistance with questions, research and work organization.",
+        aiWriterText: "Prepare messages, documents, presentations and professional content.",
+        aiVoiceText: "Create voices and narration for videos, announcements and community projects.",
+        aiInnovationText: "Turn ideas into useful, modern and efficient digital solutions.",
 
         movementEyebrow: "THE TIME IS NOW",
         movementTitle: "Do not stay behind. Take your place in the movement.",
@@ -1399,12 +1590,6 @@
       link.addEventListener("click", () => {
         mainNav.classList.remove("open");
         menuToggle.setAttribute("aria-expanded", "false");
-      });
-    });
-
-    document.querySelectorAll('.social-link[href="#"]').forEach((link) => {
-      link.addEventListener("click", (event) => {
-        event.preventDefault();
       });
     });
 
